@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodFlow - доставка еды</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">FoodFlow control</p>
+        <h1>Панель управления доставкой еды</h1>
+        <p class="hero__text">
+          Приложение показывает активные заказы, состав смены и основные показатели сервиса в одном окне.
+        </p>
+        <div class="hero__actions">
+          <button class="primary-button" type="button">Создать заказ</button>
+          <button class="ghost-button" type="button">Открыть смену</button>
+        </div>
+      </div>
+
+      <section class="hero__stats" aria-label="Главные показатели">
+        <article class="stat-card">
+          <span class="stat-card__label">Заказы за день</span>
+          <strong class="stat-card__value">184</strong>
+          <span class="stat-card__note">+12% к вчерашнему дню</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-card__label">Среднее время</span>
+          <strong class="stat-card__value">27 мин</strong>
+          <span class="stat-card__note">цель: до 30 минут</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-card__label">Курьеров на линии</span>
+          <strong class="stat-card__value">14</strong>
+          <span class="stat-card__note">2 сотрудника в резерве</span>
+        </article>
+      </section>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel panel--orders">
+        <div class="panel__header">
+          <div>
+            <p class="panel__eyebrow">Заказы</p>
+            <h2>Активные заявки</h2>
+          </div>
+          <span class="panel__badge">6 в работе</span>
+        </div>
+
+        <!-- Контейнер заполняется карточками заказов из script.js -->
+        <div id="orders-list" class="cards-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="panel panel--workers">
+        <div class="panel__header">
+          <div>
+            <p class="panel__eyebrow">Работники</p>
+            <h2>Команда смены</h2>
+          </div>
+          <span class="panel__badge panel__badge--soft">18 сотрудников</span>
+        </div>
+
+        <!-- Здесь появятся блоки с работниками: курьеры, операторы и кухня -->
+        <div id="workers-list" class="workers-list" aria-live="polite"></div>
+      </section>
+
+      <section class="panel panel--comments">
+        <div class="panel__header">
+          <div>
+            <p class="panel__eyebrow">Комментарии</p>
+            <h2>Лента заметок</h2>
+          </div>
+          <span class="panel__badge panel__badge--accent">Обновляется онлайн</span>
+        </div>
+
+        <div id="comments-list" class="comments-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
